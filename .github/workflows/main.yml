@@ -30,7 +30,7 @@ jobs:
           wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
           cat resolver* | uniq >> nameservers.txt
           rm resolver*
-          dnsvalidator -tL nameservers.txt -threads 20 --silent -o ~/resolvers.txt
+          dnsvalidator -tL nameservers.txt -threads 20 --silent > ~/resolvers.txt
 
       - name: Commit changes
         run: |
