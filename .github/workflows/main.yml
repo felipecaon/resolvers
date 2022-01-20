@@ -1,5 +1,7 @@
 name: CI
-on: push
+on:
+  schedule:
+  - cron: "0 23 * * *"
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -27,6 +29,8 @@ jobs:
     
       - name: Generate new resolvers
         run: |
+          wget https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt
+          wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt
           wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
           cat resolver* | uniq >> nameservers.txt
           rm resolver*
@@ -45,3 +49,4 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN  }}
           branch: main
+
