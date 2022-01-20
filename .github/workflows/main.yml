@@ -28,4 +28,8 @@ jobs:
       - name: Generate new resolvers
         run: |
           wget https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt
+          wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt
+          wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
+          cat resolver* | uniq >> nameservers.txt
+          rm resolver*
 
