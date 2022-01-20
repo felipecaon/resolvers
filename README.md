@@ -1,7 +1,7 @@
 # resolvers
-List of fresh resolvers, updated daily at 7am UTC -3
+List of fresh resolvers, updated daily at 10am
 
-The appoach for getting resolvers here is quite differnt, instead of validating public resources (which almost always have hazards or spoofed recors), we analyze records from already analyzed lists. Making it hard to get bad DNS's.
+The appoach for getting resolvers here is quite different, instead of validating public resources (which almost always have hazards or spoofed records), we analyze DNS entries from already analyzed lists. Making it hard to get bad DNS's.
 
 
 # Lists used
