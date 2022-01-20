@@ -2,7 +2,7 @@ name: CI
 on: push
 
 jobs:
-  resfresh-list:
+  deploy:
     runs-on: ubuntu-latest
     steps:
 
@@ -11,41 +11,41 @@ jobs:
         with:
           python-version: '3.6'
     
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.TOKEN  }}
+      # - name: checkout
+      #   uses: actions/checkout@v2
+      #   with:
+      #     token: ${{ secrets.TOKEN  }}
 
-      - name: Checkout DNS Validator
-        uses: actions/checkout@v2
-        with:
-          repository: 'vortexau/dnsvalidator'
-          path: dnsvalidator
+      # - name: Checkout DNS Validator
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: 'vortexau/dnsvalidator'
+      #     path: dnsvalidator
     
-      - name: Install DNS Validator
-        run: |
-          cd dnsvalidator
-          rm resolvers.txt
-          python3 setup.py install
+      # - name: Install DNS Validator
+      #   run: |
+      #     cd dnsvalidator
+      #     rm resolvers.txt
+      #     python3 setup.py install
     
-      - name: Generate new resolvers
-        run: |
-          wget https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt
-          wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt
-          wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
-          cat resolver* | uniq >> nameservers.txt
-          rm resolver*
-	        dnsvalidator -tL nameservers.txt -threads 20 --silent -o resolvers.txt
+      # - name: Generate new resolvers
+      #   run: |
+      #     wget https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt
+      #     wget https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt
+      #     wget https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
+      #     cat resolver* | uniq >> nameservers.txt
+      #     rm resolver*
+	    #     dnsvalidator -tL nameservers.txt -threads 20 --silent -o resolvers.txt
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "felipecaon@gmail.com"
-          git config --local user.name "github-actions[bot]"
-          git add resolvers.txt
-          git commit -m "update"
+      # - name: Commit changes
+      #   run: |
+      #     git config --local user.email "felipecaon@gmail.com"
+      #     git config --local user.name "github-actions[bot]"
+      #     git add resolvers.txt
+      #     git commit -m "update"
     
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TOKEN  }}
-          branch: main
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.TOKEN  }}
+      #     branch: main
