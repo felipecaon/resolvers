@@ -6,11 +6,9 @@ The appoach for getting resolvers here is quite differnt, instead of validating 
 
 # Lists used
 
-https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt
-
-https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt
-
-https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
+https://raw.githubusercontent.com/proabiral/Fresh-Resolvers/master/resolvers.txt\
+https://raw.githubusercontent.com/BonJarber/fresh-resolvers/main/resolvers.txt\
+https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt\
 
 # Methodology
 
