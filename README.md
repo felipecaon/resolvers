@@ -14,6 +14,6 @@ https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
 
 # Methodology
 
-1 - Grab lists from above gits
-2 - Run [dnsvalidator](https://github.com/vortexau/dnsvalidator) on top of those lists
-3 - Get results
+1 - Grab lists from above gits 
+2 - Run [dnsvalidator](https://github.com/vortexau/dnsvalidator) on top of those lists 
+3 - Get results 
