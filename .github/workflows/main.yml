@@ -33,3 +33,15 @@ jobs:
           cat resolver* | uniq >> nameservers.txt
           rm resolver*
 
+      - name: Commit changes
+        run: |
+          git config --local user.email "felipecaon@gmail.com"
+          git config --local user.name "github-actions[bot]"
+          git add resolvers.txt
+          git commit -m "update"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN  }}
+          branch: main
